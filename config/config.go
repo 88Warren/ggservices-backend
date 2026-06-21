@@ -66,7 +66,9 @@ func SetupServer() *gin.Engine {
 func SetupHandlers(router *gin.Engine) {
 	homeController := controllers.NewHomeController()
 	sitemapController := controllers.NewSitemapController()
+	healthController := controllers.NewHealthController()
 
 	routes.RegisterHomeRoutes(router, homeController)
 	routes.RegisterSitemapRoutes(router, sitemapController)
+	routes.RegisterHealthRoutes(router, healthController)
 }
